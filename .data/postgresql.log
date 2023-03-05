@@ -1,0 +1,27 @@
+2023-03-04 18:34:44.478 CET [17984] LOG:  starting PostgreSQL 15.2 on aarch64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.102), 64-bit
+2023-03-04 18:34:44.480 CET [17984] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-03-04 18:34:44.480 CET [17984] LOG:  listening on IPv6 address "::1", port 5432
+2023-03-04 18:34:44.481 CET [17984] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-03-04 18:34:44.484 CET [17987] LOG:  database system was shut down at 2023-03-04 18:34:44 CET
+2023-03-04 18:34:44.487 CET [17984] LOG:  database system is ready to accept connections
+2023-03-04 18:39:44.494 CET [17985] LOG:  checkpoint starting: time
+2023-03-04 18:41:22.584 CET [17985] LOG:  checkpoint complete: wrote 976 buffers (6.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=98.076 s, sync=0.010 s, total=98.091 s; sync files=265, longest=0.001 s, average=0.001 s; distance=4603 kB, estimate=4603 kB
+2023-03-04 18:59:44.627 CET [17985] LOG:  checkpoint starting: time
+2023-03-04 18:59:48.300 CET [17985] LOG:  checkpoint complete: wrote 37 buffers (0.2%); 1 WAL file(s) added, 0 removed, 0 recycled; write=3.650 s, sync=0.004 s, total=3.675 s; sync files=33, longest=0.001 s, average=0.001 s; distance=137 kB, estimate=4157 kB
+2023-03-04 19:02:06.965 CET [17984] LOG:  received fast shutdown request
+2023-03-04 19:02:06.967 CET [17984] LOG:  aborting any active transactions
+2023-03-04 19:02:06.969 CET [18588] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18592] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18585] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18589] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18587] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18583] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18590] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18591] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18586] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.969 CET [18584] FATAL:  terminating connection due to administrator command
+2023-03-04 19:02:06.973 CET [17984] LOG:  background worker "logical replication launcher" (PID 17990) exited with exit code 1
+2023-03-04 19:02:06.978 CET [17985] LOG:  shutting down
+2023-03-04 19:02:06.978 CET [17985] LOG:  checkpoint starting: shutdown immediate
+2023-03-04 19:02:06.983 CET [17985] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=3, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=3743 kB
+2023-03-04 19:02:06.991 CET [17984] LOG:  database system is shut down
