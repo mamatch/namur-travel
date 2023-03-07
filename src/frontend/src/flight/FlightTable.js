@@ -1,5 +1,4 @@
 import {Table} from 'antd';
-import {useState} from "react";
 
 
 const columns = [
@@ -12,6 +11,11 @@ const columns = [
         title: 'Departure',
         dataIndex: 'departureCity',
         key: 'departureCity',
+    },
+    {
+        title: 'Arrival',
+        dataIndex: 'arrivalCity',
+        key: 'arrivalCity',
     },
     {
         title: 'Available weight',

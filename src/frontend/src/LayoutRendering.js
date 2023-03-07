@@ -1,6 +1,6 @@
 import {FileOutlined, PieChartOutlined, UserOutlined, DesktopOutlined, TeamOutlined} from '@ant-design/icons';
 import {Breadcrumb, Layout, Menu, theme} from 'antd';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {FlightTable} from "./flight/FlightTable";
 import {fetchFlights} from "./flight/client";
 
@@ -27,14 +27,22 @@ const items = [
     getItem('Files', '9', <FileOutlined/>),
 ];
 
-const renderContent = (flights) => {
-    fetchFlights();
 
-    return <FlightTable flights={flights}/>
-}
 export const LayoutRendering = () => {
     const [collapsed, setCollapsed] = useState(false);
     const [flights, setFlights] = useState([]);
+
+    const getFlights = () => {
+        fetchFlights().then(data => setFlights(data));
+    }
+    useEffect(() => {
+        getFlights()
+    }, []);
+    const renderContent = () => {
+
+
+        return <FlightTable flights={flights}/>
+    }
     const {
         token: {colorBgContainer},
     } = theme.useToken();
@@ -81,7 +89,7 @@ export const LayoutRendering = () => {
                             background: colorBgContainer,
                         }}
                     >
-                        {renderContent(flights)}
+                        {renderContent()}
                     </div>
                 </Content>
                 <Footer
