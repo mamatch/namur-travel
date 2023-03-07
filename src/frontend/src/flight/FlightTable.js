@@ -30,7 +30,7 @@ const columns = [
         render: () => <a>Delete</a>,
     },
 ];
-const App = () => (
+export const FlightTable = ({flights}) => (
     <Table
         columns={columns}
         expandable={{
@@ -45,7 +45,6 @@ const App = () => (
             ),
             rowExpandable: (record) => record.name !== 'Not Expandable',
         }}
-        dataSource={data}
+        dataSource={flights}
     />
 );
-export default App;

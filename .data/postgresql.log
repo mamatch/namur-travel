@@ -25,3 +25,19 @@
 2023-03-04 19:02:06.978 CET [17985] LOG:  checkpoint starting: shutdown immediate
 2023-03-04 19:02:06.983 CET [17985] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=3, longest=0.001 s, average=0.001 s; distance=15 kB, estimate=3743 kB
 2023-03-04 19:02:06.991 CET [17984] LOG:  database system is shut down
+2023-03-07 20:52:14.408 CET [24837] LOG:  starting PostgreSQL 15.2 on aarch64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.102), 64-bit
+2023-03-07 20:52:14.410 CET [24837] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-03-07 20:52:14.410 CET [24837] LOG:  listening on IPv6 address "::1", port 5432
+2023-03-07 20:52:14.410 CET [24837] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-03-07 20:52:14.419 CET [24840] LOG:  database system was shut down at 2023-03-04 19:02:06 CET
+2023-03-07 20:52:14.426 CET [24837] LOG:  database system is ready to accept connections
+2023-03-07 20:52:42.098 CET [24857] ERROR:  syntax error at or near "user" at character 22
+2023-03-07 20:52:42.098 CET [24857] STATEMENT:  drop table if exists user cascade
+2023-03-07 20:52:42.127 CET [24857] ERROR:  syntax error at or near "user" at character 14
+2023-03-07 20:52:42.127 CET [24857] STATEMENT:  create table user (id varchar(255) not null, first_name varchar(255), last_name varchar(255), number varchar(255), primary key (id))
+2023-03-07 20:52:42.134 CET [24857] ERROR:  syntax error at or near "user" at character 114
+2023-03-07 20:52:42.134 CET [24857] STATEMENT:  alter table if exists flight add constraint FKdy8ve1c4lsys2aey9ju3xqwqq foreign key (user_contact_id) references user
+2023-03-07 20:54:07.098 CET [24857] ERROR:  syntax error at or near "user" at character 22
+2023-03-07 20:54:07.098 CET [24857] STATEMENT:  drop table if exists user cascade
+2023-03-07 20:57:14.422 CET [24838] LOG:  checkpoint starting: time
+2023-03-07 20:57:23.843 CET [24838] LOG:  checkpoint complete: wrote 96 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.402 s, sync=0.009 s, total=9.421 s; sync files=45, longest=0.001 s, average=0.001 s; distance=657 kB, estimate=657 kB

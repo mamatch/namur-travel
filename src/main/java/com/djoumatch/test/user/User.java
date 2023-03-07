@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table
+@Table(name = "end_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
