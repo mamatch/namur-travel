@@ -3,11 +3,6 @@ import {Table} from 'antd';
 
 const columns = [
     {
-        title: 'Id',
-        dataIndex: 'id',
-        key: 'id',
-    },
-    {
         title: 'Departure',
         dataIndex: 'departureCity',
         key: 'departureCity',

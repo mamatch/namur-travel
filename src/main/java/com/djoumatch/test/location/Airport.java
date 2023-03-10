@@ -15,6 +15,7 @@ public class Airport {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    @Column(nullable = false, unique = true)
     private String name;
     @ManyToOne
     private City city;

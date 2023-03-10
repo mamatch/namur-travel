@@ -16,5 +16,6 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    @Column(unique = true, nullable = false)
     private String name;
 }

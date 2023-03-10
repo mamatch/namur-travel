@@ -22,21 +22,14 @@ public class Flight {
     private Airport departureAirport;
     @OneToOne
     private Airport arrivalAirport;
+    @Column(nullable = false)
     private LocalDate departureDate;
+    @Column(nullable = false)
     private LocalDate arrivalDate;
+    @Column(nullable = false)
     private Float weightAvailable;
+    @Column(nullable = false)
     private Float price;
     @ManyToOne
     private User userContact;
-
-    public static FlightResponse toResponse(Flight flight) {
-        return FlightResponse.builder()
-                .arrivalCity(flight.getArrivalAirport().getCity().getName())
-                .departureCity(flight.getDepartureAirport().getCity().getName())
-                .departureDate(flight.getDepartureDate())
-                .arrivalDate(flight.getArrivalDate())
-                .price(flight.getPrice())
-                .weightAvalaible(flight.getWeightAvailable())
-                .build();
-    }
 }
