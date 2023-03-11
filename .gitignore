@@ -34,3 +34,5 @@ build/
 
 ### data ###
 .data/
+mem:db.mv.db
+mem:db.trace.db

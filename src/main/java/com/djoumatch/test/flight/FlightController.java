@@ -19,8 +19,13 @@ public class FlightController {
     }
 
     @PostMapping
-    public ResponseEntity<FlightDTO> addFlight(@RequestBody FlightAddRequest flightAddRequest) {
-        return ResponseEntity.ok(this.flightService.addFlight(flightAddRequest));
+    public void addFlight(@RequestBody FlightAddRequest flightAddRequest) {
+        this.flightService.addFlight(flightAddRequest);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFlight(@PathVariable("id") String id) {
+        this.flightService.deleteFlight(id);
     }
 
 }

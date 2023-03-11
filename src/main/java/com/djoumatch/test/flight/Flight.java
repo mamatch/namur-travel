@@ -32,4 +32,14 @@ public class Flight {
     private Float price;
     @ManyToOne
     private User userContact;
+
+    public Flight(Airport departureAirport, Airport arrivalAirport, LocalDate departureDate, LocalDate arrivalDate, Float weightAvailable, Float price, User userContact) {
+        this.departureAirport = departureAirport;
+        this.arrivalAirport = arrivalAirport;
+        this.departureDate = departureDate;
+        this.arrivalDate = arrivalDate;
+        this.weightAvailable = weightAvailable;
+        this.price = price;
+        this.userContact = userContact;
+    }
 }

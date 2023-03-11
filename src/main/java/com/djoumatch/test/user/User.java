@@ -19,4 +19,10 @@ public class User {
     private String lastName;
     private String number;
 
+
+    public User(String firstName, String lastName, String number) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.number = number;
+    }
 }
