@@ -19,4 +19,9 @@ public class Airport {
     private String name;
     @ManyToOne
     private City city;
+
+    public Airport(String name, City city) {
+        this.name = name;
+        this.city = city;
+    }
 }

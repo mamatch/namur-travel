@@ -18,4 +18,8 @@ public class City {
     private String id;
     @Column(unique = true, nullable = false)
     private String name;
+
+    public City(String name) {
+        this.name = name;
+    }
 }

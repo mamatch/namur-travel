@@ -22,7 +22,7 @@ public class FlightRequestMapper implements Function<FlightAddRequest, Flight> {
                 .departureDate(flightAddRequest.departureDate())
                 .arrivalDate(flightAddRequest.arrivalDate())
                 .price(flightAddRequest.price())
-                .weightAvailable(flightAddRequest.weigthAvailable())
+                .weightAvailable(flightAddRequest.weightAvailable())
                 .userContact(userService.getUserByNumber(flightAddRequest.contact()))
                 .build();
     }
