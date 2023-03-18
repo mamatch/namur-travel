@@ -22,15 +22,26 @@ public class FlightService {
                 .collect(Collectors.toList());
     }
 
-    public void addFlight(FlightAddRequest flightAddRequest) {
+    //public Flight getFlightById(Long id)
+
+    public Flight addFlight(FlightAddRequest flightAddRequest) {
         Flight flightToAdd = flightRequestMapper.apply(flightAddRequest);
         flightRepository.save(flightToAdd);
+        return flightToAdd;
     }
 
-    public void deleteFlight(String id) {
+    public void deleteFlight(Long id) {
         if (!flightRepository.checksFlightExist(id)) {
             throw new NotFoundException();
         }
         flightRepository.deleteById(id);
+    }
+
+    public Flight getById(Long id) {
+        return flightRepository.findById(id).orElseThrow(() -> new NotFoundException());
+    }
+
+    public Boolean canBeReserved(Float weight, Long id) {
+        return flightRepository.checksFlightCanBeReserved(weight, id);
     }
 }

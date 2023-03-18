@@ -110,7 +110,7 @@ public class FlightIT {
         );
 
         // then
-        resultActions.andExpect(status().isOk());
+        resultActions.andExpect(status().isCreated());
     }
 
     @Test

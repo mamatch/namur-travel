@@ -6,7 +6,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, Long> {
     @Query("SELECT u FROM User u WHERE u.number = :number")
     Optional<User> getUserByContact(@Param("number") String number);
+
+    Optional<User> findByNumber(String number);
 }

@@ -8,7 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface AirportRepository extends JpaRepository<Airport, String> {
-    @Query("SELECT a FROM Airport a WHERE a.id = :id")
-    Optional<Airport> findById(@Param("id") String id);
+public interface AirportRepository extends JpaRepository<Airport, Long> {
 }

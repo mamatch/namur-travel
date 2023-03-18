@@ -11,9 +11,9 @@ public class AirportService {
     private final AirportRepository airportRepository;
 
 
-    public Airport getAirportById(String id) {
+    public Airport getAirportById(Long id) {
         return this.airportRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(id, Airport.class.getName()));
+                .orElseThrow(() -> new NotFoundException());
     }
 
 }

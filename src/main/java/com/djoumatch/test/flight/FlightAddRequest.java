@@ -16,8 +16,8 @@ import java.time.LocalDate;
  * @param contact
  */
 public record FlightAddRequest(
-        String departureAirportId,
-        String arrivalAirportId,
+        Long departureAirportId,
+        Long arrivalAirportId,
         LocalDate departureDate,
         LocalDate arrivalDate,
         Float weightAvailable,

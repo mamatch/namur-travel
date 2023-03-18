@@ -10,7 +10,11 @@ public class UserService {
     private final UserRepository userRepository;
 
     public User getUserByNumber(String number) {
-        return userRepository.getUserByContact(number)
+        return userRepository.findByNumber(number)
                 .orElseThrow(() -> new NotFoundException());
+    }
+
+    public User getById(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new NotFoundException());
     }
 }

@@ -14,8 +14,8 @@ import lombok.Setter;
 @Setter
 public class City {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(unique = true, nullable = false)
     private String name;
 

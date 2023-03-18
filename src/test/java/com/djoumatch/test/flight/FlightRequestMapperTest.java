@@ -15,6 +15,7 @@ import java.time.LocalDate;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
 
@@ -37,19 +38,17 @@ class FlightRequestMapperTest {
         // given
         City city = new City("fgdfgfgf", "Douala");
         Airport airport = new Airport(
-                "ggdfgdfgfgdfg",
                 "Douala Airport",
                 city
         );
         User user = new User(
-                "fgdfgdfgfg",
                 "Djoumatch",
                 "Eteil",
                 "+324946705"
         );
         FlightAddRequest flightAddRequest = new FlightAddRequest(
-                airport.getId(),
-                airport.getId(),
+                1l,
+                1l,
                 LocalDate.of(2023, 03, 21),
                 LocalDate.of(2023, 03, 27),
                 12f,
@@ -57,7 +56,7 @@ class FlightRequestMapperTest {
                 user.getNumber()
         );
 
-        given(airportService.getAirportById(anyString()))
+        given(airportService.getAirportById(anyLong()))
                 .willReturn(airport);
         given(userService.getUserByNumber(anyString()))
                 .willReturn(user);

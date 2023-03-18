@@ -16,8 +16,8 @@ import java.time.LocalDate;
 @Table
 public class Flight {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @OneToOne
     private Airport departureAirport;
     @OneToOne

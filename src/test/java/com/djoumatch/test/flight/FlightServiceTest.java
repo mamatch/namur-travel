@@ -57,12 +57,10 @@ class FlightServiceTest {
         // given
         City city = new City("fgdfgfgf", "Douala");
         Airport airport = new Airport(
-                "ggdfgdfgfgdfg",
                 "Douala Airport",
                 city
         );
         User user = new User(
-                "fgdfgdfgfg",
                 "Djoumatch",
                 "Eteil",
                 "+324946705"
@@ -104,7 +102,7 @@ class FlightServiceTest {
     @Test
     void shouldDeleteFlight() {
         // given
-        String id = "gdgdfgdf";
+        Long id = 15l;
 
         given(flightRepository.checksFlightExist(id))
                 .willReturn(true);
@@ -118,7 +116,7 @@ class FlightServiceTest {
     @Test
     void shouldThrowExceptionWhenDeleteFlight() {
         // given
-        String id = "gdgdfgdf";
+        Long id = 15l;
 
         given(flightRepository.checksFlightExist(id))
                 .willReturn(false);
