@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
-@RestController("/api/v1/reservation")
+@RestController
+@RequestMapping("/api/v1/reservation")
 @RequiredArgsConstructor
 public class ReservationController {
 
@@ -27,5 +29,10 @@ public class ReservationController {
                 .buildAndExpand(reservation.getId())
                 .toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ReservationDTO>> getAll() {
+        return ResponseEntity.ok(reservationService.getAll());
     }
 }

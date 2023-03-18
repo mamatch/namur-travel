@@ -9,6 +9,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ReservationService {
@@ -16,7 +18,9 @@ public class ReservationService {
     private final ReservationRepository reservationRepository;
     private final UserService userService;
     private final FlightService flightService;
-    private ReservationReqMapToReservation toReservation;
+    private final ReservationReqMapToReservation toReservation;
+
+    private final ReservationMapToDTO reservationMapToDTO;
 
     @Transactional
     public Reservation reserve(ReservationRequest reservationRequest) {
@@ -37,5 +41,11 @@ public class ReservationService {
     public Reservation getById(Long id) {
         return reservationRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException());
+    }
+
+    public List<ReservationDTO> getAll() {
+        return reservationRepository.findAll().stream()
+                .map(reservationMapToDTO)
+                .toList();
     }
 }

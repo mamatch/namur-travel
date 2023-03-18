@@ -1,6 +1,7 @@
 package com.djoumatch.test.user;
 
 import com.djoumatch.test.exception.NotFoundException;
+import com.djoumatch.test.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ public class UserService {
 
     public User getUserByNumber(String number) {
         return userRepository.findByNumber(number)
-                .orElseThrow(() -> new NotFoundException());
+                .orElseThrow(() -> new UserNotFoundException(number));
     }
 
     public User getById(Long id) {

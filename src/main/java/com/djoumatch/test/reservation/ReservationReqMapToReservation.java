@@ -8,11 +8,12 @@ import com.djoumatch.test.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.function.Function;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class ReservationReqMapToReservation implements Function<ReservationRequest, Reservation> {
 
