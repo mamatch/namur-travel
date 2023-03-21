@@ -5,18 +5,13 @@ pipeline {
 
         stage('Build'){
             steps {
-                withMaven(maven: 'maven-3.6.3'){
-                    sh'mvn clean install'
-                }
+                sh'mvn clean install'
             }
         }
 
         stage('Test'){
             steps {
-                withMaven(maven: 'maven-3.6.3') {
-                    sh'mvn test'
-                }
-
+                sh'mvn test'
             }
         }
 
