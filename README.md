@@ -10,5 +10,14 @@ and another can buy it.
 - Java (Spring boot)
 - JavaScript (React)
 - PostgreSQL
-- Github actions (CI/CD)
-- AWS
+- Jenkins
+
+### Design
+
+#### Features
+
+### Architecture
+
+#### Database Schema
+
+

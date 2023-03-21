@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build'){
+            when {
+                branch 'main'
+                changeset '.*'
+            }
+            steps {
+                sh'mvn clean install'
+            }
+        }
+
+        stage('Test'){
+            when {
+                branch 'main'
+                changeset '.*'
+            }
+            steps {
+                sh'mvn test'
+            }
+        }
+
+    }
+}
